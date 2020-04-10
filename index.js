@@ -37,7 +37,7 @@ app.post('/api/translate', async (req, res) => {
   }
 });
 
-app.post(`/webhook/${bot.token}`, (req, res) => {
+app.post(`/webhook/${bot._token}`, (req, res) => {
   bot._bot.processUpdate(req.body);
   res.sendStatus(200);
 });

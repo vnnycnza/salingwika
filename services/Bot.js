@@ -8,7 +8,8 @@ class Bot {
   constructor(env, token, url) {
     if (env === 'production') {
       this._bot = new TelegramBot(token);
-      this._bot.setWebHook(`${url}/webhook/${this._bot.token}`);
+      this._token = this._bot.token;
+      this._bot.setWebHook(`${url}/webhook/${this._token}`);
     } else {
       this._bot = new TelegramBot(token, { polling: true });
     }
