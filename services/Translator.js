@@ -78,7 +78,8 @@ class Translator {
         }
 
         if (translations.length !== 0) {
-          results[category] = translations;
+          // Return first 5 results only
+          results[category] = translations.splice(0, 5);
         }
       });
 

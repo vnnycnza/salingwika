@@ -15,11 +15,11 @@ class Bot {
     }
 
     this._bot.onText(/\/english (.+)/, async (msg, match) => {
-      const receipient = msg.chat.id;
+      const recipient = msg.chat.id;
       const word = match[1];
 
       const reply = await Bot.formatResponse(word, 'filipino', 'english');
-      this._bot.sendMessage(receipient, reply, { parse_mode: 'Markdown' });
+      this._bot.sendMessage(recipient, reply, { parse_mode: 'Markdown' });
     });
 
     this._bot.onText(/\/filipino (.+)/, async (msg, match) => {
