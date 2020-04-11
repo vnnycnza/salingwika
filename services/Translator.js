@@ -35,9 +35,7 @@ class Translator {
     $('div#left_content')
       .children('div.result_sub_title_language')
       .each((i, item) => {
-        const category = $(item)
-          .text()
-          .trim();
+        const category = $(item).text().trim();
         const translations = [];
 
         let elementToFind = 'tr.result_tr > td.right_td > div.result_text';
@@ -67,9 +65,7 @@ class Translator {
             .next('table')
             .find(elementToFind)
             .each((idx, it) => {
-              const translation = $(it)
-                .text()
-                .trim();
+              const translation = $(it).text().trim();
 
               if (translation.length !== 0) {
                 translations.push(translation);
